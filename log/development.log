@@ -1,0 +1,888 @@
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-17 20:44:55 -0500
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.11) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.11) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.11) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.11) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.4.0/webrick/server.rb:308:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.4ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (108.2ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (166.6ms)
+  [1m[36m (15.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (5.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBooks (20150530125202)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "author" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150530125202"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+Migrating to DeviseCreateUsers (20150530140451)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150530140451"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdToBooks (20150530141648)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "books" ADD "user_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150530141648"]]
+  [1m[36m (10.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCategories (20150530142809)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150530142809"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddCategoryIdToBooks (20150530142938)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "books" ADD "category_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150530142938"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddAttachmentBookImgToBooks (20150530152014)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "books" ADD "book_img_file_name" varchar[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "books" ADD "book_img_content_type" varchar
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "books" ADD "book_img_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "books" ADD "book_img_updated_at" datetime
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150530152014"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+Migrating to CreateReviews (20150530155146)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150530155146"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+Migrating to AddUserIdToReviews (20150530155311)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "reviews" ADD "user_id" integer
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150530155311"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+Migrating to AddBookIdToReviews (20150530155404)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "reviews" ADD "book_id" integer
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150530155404"]]
+  [1m[35m (7.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-17 20:47:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "books"
+  Rendered books/index.html.erb within layouts/application (7.7ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 10648ms (Views: 10603.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/application.self-0798470421746e6726071369360d1103496abb5cb09aa1b17dd51bb0f32498cc.css?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/bootstrap/affix.self-5333fddfa90a7725cdc9fb8513c785f72d5a73587a787ef154c7d299b034b5f6.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/bootstrap/alert.self-1988e4dd4c1a142d70141210a646431bf911756c6d8ef7b866c0608b9cb1d802.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/bootstrap/button.self-4030b446249614a23334522fe973beecc3571f1ad2269b47cdd15dd5c3f95105.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/bootstrap/carousel.self-2b616da53c44931503d04b63172811aacef63745d7ebe03c539df27225ed8dba.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/bootstrap/collapse.self-d902bceafc627389b27e56a9cf6ff679d4d3a9707253f64e51336877d78c750a.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/bootstrap/dropdown.self-76dbf9cdb7fbd6fec67b129abdddd64090b56cc475ba9638894b981c39846263.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/bootstrap/modal.self-02f36579b29d2496dda920a82c63b32bac24ce29ba351d0ab7970caf0178aa04.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:13 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy.self-92c15826f84c5f9b079f1bebc777d0978f5aa4ffc8676b546b359799b0bc1dfe.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/bootstrap/transition.self-be7eae6669510927e31586d851a01eee18c527108dd924eaed1d3b6492ed0040.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/bootstrap/tooltip.self-2609cdb00a0204a33b355f29cd988395a3fd8cfd2c78f70353e62e891a0d18c3.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/bootstrap/tab.self-943d113f140dfdb92c8713cdc40fce01488bd1bd443ed20fe5cc43c79c1f55ad.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/bootstrap/popover.self-ae735977ad00be0cc78ade00a8b5556aa6c072493c4bd07765b93a102582ae29.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/jquery.raty.self-628421be04f36f7a8fa8b9b884c6d7824d6f8bdeba4f172b131f15aa63f713e8.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2019-01-17 20:47:14 -0500
+
+
+Started GET "/books/new" for 127.0.0.1 at 2019-01-17 20:47:22 -0500
+Processing by BooksController#new as HTML
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-01-17 20:47:22 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (4.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (339.3ms)
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 564ms (Views: 533.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-01-17 20:47:29 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (248.2ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 506ms (Views: 502.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-17 20:47:44 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UWC6V7c4kFq0aX6dHCkQIysDfY76zZUYxsV1OfK+GOGJjYyeCDyY0FgvZ25nhi+i/9evzrPxWVnLYJCGIII94g==", "user"=>{"email"=>"wkalil416@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'wkalil416@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (122.5ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 502ms (Views: 261.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-17 20:48:00 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n+EHVcJY33+ISgCFA1Jv8JoTq9XHBO53d4POhLjdQEZHDDGcfVzX9WQMGXZ4/VBxTsd5lY44IjZ6Jis7auFlRQ==", "user"=>{"email"=>"wkalil416@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'wkalil416@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (100.5ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 331ms (Views: 205.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-17 20:48:31 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ihUiJNJA5pOXqDA0RL7TqO1skRsS/58qLg1E8yW8sA9S+BTtbUTuGXvuKcc/EewpObhDW1vDU2sjqKFM94CVDA==", "user"=>{"email"=>"wkalil416@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'wkalil416@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "wkalil416@gmail.com"], ["encrypted_password", "$2a$10$FkziVSOLKeOQ5JaUhxdvu.rk2yY.G8SHgMds9ONmFDZUHD1pmA6.m"], ["created_at", "2019-01-18 01:48:31.949352"], ["updated_at", "2019-01-18 01:48:31.949352"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2019-01-18 01:48:31.969141"], ["current_sign_in_at", "2019-01-18 01:48:31.969141"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2019-01-18 01:48:31.979557"], ["id", 1]]
+  [1m[35m (4.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/books/new
+Completed 302 Found in 208ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2019-01-17 20:48:32 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered books/_form.html.erb (170.8ms)
+  Rendered books/new.html.erb within layouts/application (174.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 406ms (Views: 303.5ms | ActiveRecord: 3.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (16.0ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Comedy"], ["created_at", "2019-01-18 01:57:54.556538"], ["updated_at", "2019-01-18 01:57:54.556538"]]
+  [1m[35m (33.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Tech"], ["created_at", "2019-01-18 01:57:54.612997"], ["updated_at", "2019-01-18 01:57:54.612997"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tragedy"], ["created_at", "2019-01-18 01:57:54.626197"], ["updated_at", "2019-01-18 01:57:54.626197"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Suspense Fiction"], ["created_at", "2019-01-18 01:57:54.638923"], ["updated_at", "2019-01-18 01:57:54.638923"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.9ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Workplace Tell-All"], ["created_at", "2019-01-18 01:57:54.660294"], ["updated_at", "2019-01-18 01:57:54.660294"]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Thriller"], ["created_at", "2019-01-18 01:57:54.681630"], ["updated_at", "2019-01-18 01:57:54.681630"]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Westerns"], ["created_at", "2019-01-18 01:57:54.701454"], ["updated_at", "2019-01-18 01:57:54.701454"]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Urban Fiction"], ["created_at", "2019-01-18 01:57:54.715529"], ["updated_at", "2019-01-18 01:57:54.715529"]]
+  [1m[36m (6.4ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/books/new" for 127.0.0.1 at 2019-01-17 21:00:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered books/_form.html.erb (315.8ms)
+  Rendered books/new.html.erb within layouts/application (324.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 1144ms (Views: 982.4ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2019-01-17 21:03:04 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9bEpLlS1tS6za37kj2hJqxhL4c88obIsip1BES+0uc4tXB/n67G9pF8tZxf0x3YqzJ8zj3Wdfm2HOKSu/YiczQ==", "category_id"=>"1", "book"=>{"book_img"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1128b09d8 @tempfile=#<Tempfile:/tmp/RackMultipart20190117-17547-330dzc.png>, @original_filename="Night_School.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"book[book_img]\"; filename=\"Night_School.png\"\r\nContent-Type: image/png\r\n">, "title"=>"Night School", "description"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "author"=>"Kevin Hart"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-676y86.png'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k.png[0]' -auto-orient -resize "250x350>" '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k20190117-17547-yeka5f'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k20190117-17547-yeka5f'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k.png[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k.png[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k.png[0]' -auto-orient -resize "325x475>" '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k20190117-17547-1igye94'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-1id9d3k20190117-17547-1igye94'
+  [1m[35m (0.3ms)[0m  begin transaction
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/5d754bdbae0e8e9a22e699810ca2f84e20190117-17547-9k1z0h.png'
+  [1m[36mSQL (13.3ms)[0m  [1mINSERT INTO "books" ("title", "description", "author", "book_img_file_name", "book_img_content_type", "book_img_file_size", "book_img_updated_at", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Night School"], ["description", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."], ["author", "Kevin Hart"], ["book_img_file_name", "Night_School.png"], ["book_img_content_type", "image/png"], ["book_img_file_size", 125203], ["book_img_updated_at", "2019-01-18 02:03:04.104972"], ["user_id", 1], ["category_id", 1], ["created_at", "2019-01-18 02:03:04.868859"], ["updated_at", "2019-01-18 02:03:04.868859"]]
+  [1m[35m (35.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 955ms (ActiveRecord: 52.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-17 21:03:05 -0500
+Processing by BooksController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books"  ORDER BY created_at DESC
+  Rendered books/index.html.erb within layouts/application (15.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.5ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 212ms (Views: 207.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2019-01-17 21:03:17 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 1]]
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  Rendered collection (0.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered books/show.html.erb within layouts/application (19.9ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 268ms (Views: 220.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/star-off.png" for 127.0.0.1 at 2019-01-17 21:03:17 -0500
+
+
+Started GET "/books/1/reviews/new" for 127.0.0.1 at 2019-01-17 21:17:41 -0500
+Processing by ReviewsController#new as HTML
+  Parameters: {"book_id"=>"1"}
+  [1m[35mBook Load (0.3ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered reviews/_form.html.erb (59.5ms)
+  Rendered reviews/new.html.erb within layouts/application (64.1ms)
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 271ms (Views: 219.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/star-on.png" for 127.0.0.1 at 2019-01-17 21:17:43 -0500
+
+
+Started GET "/assets/star-on.png" for 127.0.0.1 at 2019-01-17 21:17:51 -0500
+
+
+Started POST "/books/1/reviews" for 127.0.0.1 at 2019-01-17 21:18:00 -0500
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Iju9zbJWIEnXuYwYBlnjhUwafkp97N7509zluyWyGdT61osEDVIowzv/let99twEmM6sCjTQErjeeQAE94481w==", "review"=>{"rating"=>"4", "comment"=>"Loved It"}, "commit"=>"Create Review", "book_id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "reviews" ("rating", "comment", "book_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["rating", 4], ["comment", "Loved It"], ["book_id", 1], ["user_id", 1], ["created_at", "2019-01-18 02:18:00.141558"], ["updated_at", "2019-01-18 02:18:00.141558"]]
+  [1m[36m (34.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 53ms (ActiveRecord: 35.8ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2019-01-17 21:18:00 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBook Load (0.3ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered reviews/_review.html.erb (4.9ms)
+  Rendered books/show.html.erb within layouts/application (35.0ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 204ms (Views: 191.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/star-on.png" for 127.0.0.1 at 2019-01-17 21:18:01 -0500
+
+
+Started GET "/assets/star-off.png" for 127.0.0.1 at 2019-01-17 21:18:01 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 10:01:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"  ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (40.2ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 11665ms (Views: 11619.4ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.self-d6a0e036c9a46b7878521db6b03d1c36e9995955a323ad5b2541b0da9f0f5739.css?body=1" for 127.0.0.1 at 2019-01-18 10:01:17 -0500
+
+
+Started GET "/books/new" for 127.0.0.1 at 2019-01-18 10:05:04 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered books/_form.html.erb (238.4ms)
+  Rendered books/new.html.erb within layouts/application (250.8ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 488ms (Views: 426.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2019-01-18 10:08:54 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m87V0uByrGjYbtskNvIcByFjX4WrQHa3lLTBg7phIIJDI+MbX3ak4jQowtdNXSOG9beNxeJ8uvaZESQ8aF0FgQ==", "category_id"=>"1", "book"=>{"book_img"=>#<ActionDispatch::Http::UploadedFile:0x00007f7ef3708040 @tempfile=#<Tempfile:/tmp/RackMultipart20190118-5625-y6by0n.jpg>, @original_filename="a-heartbreaking-work-of-staggering-genius-dave-eggers.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"book[book_img]\"; filename=\"a-heartbreaking-work-of-staggering-genius-dave-eggers.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"A Heartbreaking Work of Staggering Genius (2000)", "description"=>"Eggers is a fairly important individual in humor and letters, what with founding McSweeney’s and becoming a successful novelist. His first book, however, was this hilarious sort-of memoir, or rather autobiographical novel. After detailing life as a young gadabout forced to grow up fast when a tragedy leads to him raising his brother, we get back into the funny, massaged adventures of the go-for-broke Eggers, such as how he runs the much-missed magazine Might and unsuccessfully auditions for The Real World.", "author"=>"Dave Eggers"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-211es7.jpg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih.jpg[0]' -auto-orient -resize "250x350>" '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih20190118-5625-1144m9g'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih20190118-5625-1144m9g'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih.jpg[0]' -auto-orient -resize "325x475>" '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih20190118-5625-1vb21ep'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-1un15ih20190118-5625-1vb21ep'
+  [1m[35m (0.4ms)[0m  begin transaction
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/2338af05eed5ab4e0cc39652136cad1920190118-5625-ndewz6.jpg'
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "books" ("title", "description", "author", "book_img_file_name", "book_img_content_type", "book_img_file_size", "book_img_updated_at", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "A Heartbreaking Work of Staggering Genius (2000)"], ["description", "Eggers is a fairly important individual in humor and letters, what with founding McSweeney’s and becoming a successful novelist. His first book, however, was this hilarious sort-of memoir, or rather autobiographical novel. After detailing life as a young gadabout forced to grow up fast when a tragedy leads to him raising his brother, we get back into the funny, massaged adventures of the go-for-broke Eggers, such as how he runs the much-missed magazine Might and unsuccessfully auditions for The Real World."], ["author", "Dave Eggers"], ["book_img_file_name", "a-heartbreaking-work-of-staggering-genius-dave-eggers.jpg"], ["book_img_content_type", "image/jpeg"], ["book_img_file_size", 31101], ["book_img_updated_at", "2019-01-18 15:08:54.243425"], ["user_id", 1], ["category_id", 1], ["created_at", "2019-01-18 15:08:54.909006"], ["updated_at", "2019-01-18 15:08:54.909006"]]
+  [1m[35m (6.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 757ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 10:08:55 -0500
+Processing by BooksController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books"  ORDER BY created_at DESC
+  Rendered books/index.html.erb within layouts/application (13.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 238ms (Views: 234.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2019-01-18 10:08:59 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered books/_form.html.erb (328.7ms)
+  Rendered books/new.html.erb within layouts/application (330.2ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 526ms (Views: 505.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2019-01-18 10:10:31 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jKBLwkB8ENghbtfI/geb1zlR//InGHX16h2a1heD/nRUTX0L/3gYUs0ozjuFqKRW7YUtsm4kubTnuH9pxb/bdw==", "category_id"=>"1", "book"=>{"title"=>"Born Standing Up", "description"=>"", "author"=>"Steve Martin "}, "commit"=>"Create Book"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "books" ("title", "description", "author", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Born Standing Up"], ["description", ""], ["author", "Steve Martin "], ["user_id", 1], ["category_id", 1], ["created_at", "2019-01-18 15:10:31.502379"], ["updated_at", "2019-01-18 15:10:31.502379"]]
+  [1m[36m (28.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 52ms (ActiveRecord: 29.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 10:10:31 -0500
+Processing by BooksController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books"  ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (11.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 158ms (Views: 154.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/images/book_index/missing.png" for 127.0.0.1 at 2019-01-18 10:10:32 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/book_index/missing.png"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.4.0/webrick/server.rb:308:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.1ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.5ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (125.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.1ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (111.3ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2019-01-18 10:10:36 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mBook Load (0.5ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 3]]
+  Rendered collection (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered books/show.html.erb within layouts/application (12.8ms)
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 194ms (Views: 160.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/images/book_show/missing.png" for 127.0.0.1 at 2019-01-18 10:10:36 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/book_show/missing.png"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.4.0/webrick/server.rb:308:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.4ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.2ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.6ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (30.3ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.0ms)
+
+
+Started GET "/assets/star-off.png" for 127.0.0.1 at 2019-01-18 10:10:36 -0500
+
+
+Started GET "/images/book_index/missing.png" for 127.0.0.1 at 2019-01-18 10:10:36 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/book_index/missing.png"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.4.0/webrick/server.rb:308:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.9ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (58.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (66.9ms)
+
+
+Started GET "/books/3/edit" for 127.0.0.1 at 2019-01-18 10:10:38 -0500
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.9ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered books/edit.html.erb within layouts/application (136.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 287ms (Views: 274.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/images/book_show/missing.png" for 127.0.0.1 at 2019-01-18 10:10:39 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/book_show/missing.png"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.4.0/webrick/server.rb:308:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (17.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.9ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (81.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.5ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (2.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /var/lib/gems/2.4.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (69.2ms)
+
+
+Started PATCH "/books/3" for 127.0.0.1 at 2019-01-18 10:10:46 -0500
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"72RXMACLbbXg0b26yg5mxXFh58xXgd/9EUffB9hdMeo3iWH5v49lPwyXpEmxoVlEpbU1jB69E7wc4jq4CmEU6Q==", "book"=>{"category_id"=>"1", "book_img"=>#<ActionDispatch::Http::UploadedFile:0x00007f7ef2102110 @tempfile=#<Tempfile:/tmp/RackMultipart20190118-5625-gy12u2.jpg>, @original_filename="born-standing-up-steve-martin.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"book[book_img]\"; filename=\"born-standing-up-steve-martin.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Born Standing Up", "description"=>"", "author"=>"Steve Martin "}, "commit"=>"Update Book", "id"=>"3"}
+  [1m[36mBook Load (1.8ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-uh0mdr.jpg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g.jpg[0]' -auto-orient -resize "250x350>" '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g20190118-5625-1d7jf14'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g20190118-5625-1d7jf14'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g.jpg[0]' -auto-orient -resize "325x475>" '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g20190118-5625-1wj255'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-lq690g20190118-5625-1wj255'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/f21babc4e090e9d8adac74af7e73287720190118-5625-1i10lpp.jpg'
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "books" SET "book_img_file_name" = ?, "book_img_content_type" = ?, "book_img_file_size" = ?, "book_img_updated_at" = ?, "updated_at" = ? WHERE "books"."id" = ?[0m  [["book_img_file_name", "born-standing-up-steve-martin.jpg"], ["book_img_content_type", "image/jpeg"], ["book_img_file_size", 24101], ["book_img_updated_at", "2019-01-18 15:10:46.228582"], ["updated_at", "2019-01-18 15:10:46.924279"], ["id", 3]]
+  [1m[35m (7.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 809ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2019-01-18 10:10:47 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  Rendered collection (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered books/show.html.erb within layouts/application (10.9ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 152ms (Views: 144.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/star-off.png" for 127.0.0.1 at 2019-01-18 10:10:48 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 10:10:50 -0500
+Processing by BooksController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.6ms)[0m  [1mSELECT "books".* FROM "books"  ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (11.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 179ms (Views: 174.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2019-01-18 10:11:00 -0500
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered books/_form.html.erb (163.8ms)
+  Rendered books/new.html.erb within layouts/application (169.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 295ms (Views: 287.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2019-01-18 10:12:06 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+vDgfN/rZWiBudSj1aU5sd2PhnBjG6rN1wr23eHErdEiHda1YO9t4m3/zVCuCgYwCVtUMConZozarxNiM/iI0g==", "category_id"=>"1", "book"=>{"book_img"=>#<ActionDispatch::Http::UploadedFile:0x00007f7ef2cb3720 @tempfile=#<Tempfile:/tmp/RackMultipart20190118-5625-fdrifr.jpg>, @original_filename="daddys-boy-chris-elliott.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"book[book_img]\"; filename=\"daddys-boy-chris-elliott.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Daddy’s Boy ", "description"=>"Elliott, the “Guy Under the Stairs” on Late Night with David Letterman, the thirtysomething paperboy on Get a Life, and the cabin boy in Cabin Boy, has written a few fake nonfiction titles, such as Into Hot Air, about his disastrous, not-real ascent of Mount Everest. But the innovative, meta-comedian wrote an actual, mostly truthful book with Daddy’s Boy, as the subject is too real — it’s about growing up and forging one’s own identity and voice in the wake of phenomenally successful parents in the same business. After all, he’s the son of Bob Elliott of the classic comedy duo Bob and Ray. It’s the rare book that’s also self-accountable, because after every chapter Chris Elliott delivers, Bob Elliott gets his own rebuttal chapter.", "author"=>"Chris Elliott"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-izov9h.jpg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v.jpg[0]' -auto-orient -resize "250x350>" '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v20190118-5625-10w9nsz'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v20190118-5625-10w9nsz'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v.jpg[0]' -auto-orient -resize "325x475>" '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v20190118-5625-aygh1m'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-ls8y8v20190118-5625-aygh1m'
+  [1m[35m (0.2ms)[0m  begin transaction
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/8bd415fb8aa3a0715f0ec978a5dab64c20190118-5625-1drline.jpg'
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "books" ("title", "description", "author", "book_img_file_name", "book_img_content_type", "book_img_file_size", "book_img_updated_at", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Daddy’s Boy "], ["description", "Elliott, the “Guy Under the Stairs” on Late Night with David Letterman, the thirtysomething paperboy on Get a Life, and the cabin boy in Cabin Boy, has written a few fake nonfiction titles, such as Into Hot Air, about his disastrous, not-real ascent of Mount Everest. But the innovative, meta-comedian wrote an actual, mostly truthful book with Daddy’s Boy, as the subject is too real — it’s about growing up and forging one’s own identity and voice in the wake of phenomenally successful parents in the same business. After all, he’s the son of Bob Elliott of the classic comedy duo Bob and Ray. It’s the rare book that’s also self-accountable, because after every chapter Chris Elliott delivers, Bob Elliott gets his own rebuttal chapter."], ["author", "Chris Elliott"], ["book_img_file_name", "daddys-boy-chris-elliott.jpg"], ["book_img_content_type", "image/jpeg"], ["book_img_file_size", 47761], ["book_img_updated_at", "2019-01-18 15:12:06.208572"], ["user_id", 1], ["category_id", 1], ["created_at", "2019-01-18 15:12:06.713927"], ["updated_at", "2019-01-18 15:12:06.713927"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 587ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 10:12:06 -0500
+Processing by BooksController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books"  ORDER BY created_at DESC
+  Rendered books/index.html.erb within layouts/application (12.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.6ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 218ms (Views: 215.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2019-01-18 10:12:12 -0500
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered books/_form.html.erb (130.5ms)
+  Rendered books/new.html.erb within layouts/application (136.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 252ms (Views: 240.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2019-01-18 10:13:56 -0500
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ik0gyY3lGhJQ302bm46KV6HyvhKil30EHyNEzElUMd5SoBYAMuESmLyZVGjgIbXWdSZsUuursUUShqFzm2gU3Q==", "category_id"=>"1", "book"=>{"book_img"=>#<ActionDispatch::Http::UploadedFile:0x00007f7ef2800070 @tempfile=#<Tempfile:/tmp/RackMultipart20190118-5625-g2hcsf.jpg>, @original_filename="girl-walks-into-a-bar-rachel-dratch.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"book[book_img]\"; filename=\"girl-walks-into-a-bar-rachel-dratch.jpg\"\r\nContent-Type: image/jpeg\r\n">, "title"=>"Girl Walks Into a Bar", "description"=>"Girl Walks Into a Bar deals a lot with something that arts and entertainment books don’t touch on much — disappointment and the abrupt end of glory. For example, Dratch went from an epic run on SNL to being cast as Jenna on old scene partner Tina Fey’s 30 Rock, and was replaced after the pilot. Life doesn’t go where you think it’s going to go, which is another theme of this book, which ultimately becomes a sweet and lovely story about second chances and unexpected joy. (Dratch meets a guy and has an unplanned baby late in her child-bearing years.)", "author"=>" Rachel Dratch "}, "commit"=>"Create Book"}
+  [1m[35mUser Load (3.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-rw490f.jpg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed.jpg[0]' -auto-orient -resize "250x350>" '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed20190118-5625-1r5w4sf'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed20190118-5625-1r5w4sf'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed.jpg[0]' 2>/dev/null
+Command :: PATH=/usr/local/bin/:$PATH; identify -format %m '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed.jpg[0]'
+Command :: PATH=/usr/local/bin/:$PATH; convert '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed.jpg[0]' -auto-orient -resize "325x475>" '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed20190118-5625-cs7s2u'
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-1ip04ed20190118-5625-cs7s2u'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/tmp/48597e73190faaa83b702d9509f865d920190118-5625-6say6m.jpg'
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "books" ("title", "description", "author", "book_img_file_name", "book_img_content_type", "book_img_file_size", "book_img_updated_at", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Girl Walks Into a Bar"], ["description", "Girl Walks Into a Bar deals a lot with something that arts and entertainment books don’t touch on much — disappointment and the abrupt end of glory. For example, Dratch went from an epic run on SNL to being cast as Jenna on old scene partner Tina Fey’s 30 Rock, and was replaced after the pilot. Life doesn’t go where you think it’s going to go, which is another theme of this book, which ultimately becomes a sweet and lovely story about second chances and unexpected joy. (Dratch meets a guy and has an unplanned baby late in her child-bearing years.)"], ["author", " Rachel Dratch "], ["book_img_file_name", "girl-walks-into-a-bar-rachel-dratch.jpg"], ["book_img_content_type", "image/jpeg"], ["book_img_file_size", 40112], ["book_img_updated_at", "2019-01-18 15:13:56.709724"], ["user_id", 1], ["category_id", 1], ["created_at", "2019-01-18 15:13:57.314753"], ["updated_at", "2019-01-18 15:13:57.314753"]]
+  [1m[36m (31.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 693ms (ActiveRecord: 36.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-18 10:13:57 -0500
+Processing by BooksController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "books"
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books"  ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (16.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 177ms (Views: 173.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/books?category=Comedy" for 127.0.0.1 at 2019-01-18 10:15:04 -0500
+Processing by BooksController#index as HTML
+  Parameters: {"category"=>"Comedy"}
+  [1m[35mCategory Load (2.7ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT 1  [["name", "Comedy"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."category_id" = ?[0m  [["category_id", 1]]
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books" WHERE "books"."category_id" = ?  ORDER BY created_at DESC  [["category_id", 1]]
+  Rendered books/index.html.erb within layouts/application (15.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+Completed 200 OK in 159ms (Views: 151.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/books/3" for 127.0.0.1 at 2019-01-18 10:15:44 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 3]]
+  Rendered collection (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered books/show.html.erb within layouts/application (7.9ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 144ms (Views: 130.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/star-off.png" for 127.0.0.1 at 2019-01-18 10:15:44 -0500
+
+
+Started GET "/books/1" for 127.0.0.1 at 2019-01-18 10:15:49 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBook Load (0.3ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  [1m[35m (0.9ms)[0m  SELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."book_id" = ?  [["book_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."book_id" = ?[0m  [["book_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered reviews/_review.html.erb (6.3ms)
+  Rendered books/show.html.erb within layouts/application (48.0ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 217ms (Views: 184.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/star-on.png" for 127.0.0.1 at 2019-01-18 10:15:50 -0500
